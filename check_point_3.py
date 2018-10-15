@@ -13,9 +13,6 @@ def get_variables():
     
     return gamma, omega_zero, points
 
-def calculate_time(omega_zero, points, i):
-    """Calculates the current time variable of the displacement."""
-    return (5.0*math.pi*i/points)/omega_zero
 
 def shm(omega_zero, gamma, t):
     """Calculates the displacement for a damped simple harmonic oscillator."""
@@ -50,6 +47,7 @@ def plot_amplitude_against_time(amplitudes, times, damping_type):
     plt.ylabel("Amplitude x(t) (m)")
     plt.show()
 
+
 def main():
     """The main method executes the main functionality of the program."""
     gamma, omega_zero, points = get_variables()
@@ -57,7 +55,7 @@ def main():
     amplitudes = []
     for i in range(0, points):
         # Calculates the time for each displacement.
-        t = calculate_time(omega_zero, points, i)
+        t = (5.0*math.pi*i/points)/omega_zero
         # Appends the current time to the list of times
         times.append(t)
         # Calculates the displacement at the current time and appends it to the 
