@@ -17,7 +17,7 @@ def get_variables():
 
 
 def set_initial(v_initial, theta):
-    """   
+    """
     Set inital conditions
     """
     vx = v_initial*math.cos(math.radians(theta))
